@@ -2,7 +2,7 @@
 
 <%= form_tag authors_path, method: "post" do %>
 
-  <% @author.errors.any? %>
+  <% if @author.errors.any? %>
     <div id='error_explanation'>
       <h2>There were some errors:</h2>
       <ul>
@@ -30,4 +30,4 @@
 
   <%= submit_tag "Create" %>
 <% end %>
-<% end %>
+
