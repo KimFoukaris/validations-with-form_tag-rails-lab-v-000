@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.update_attributes(author_params)
+    @post = Post.update_attributes(post_params)
     if @post.valid?
       @post.save
       redirect_to post_path(@post)
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(author_params)
+    @post = Post.new(post_params)
     if @post.valid?
       @post.save
       redirect_to post_path(@post)
