@@ -18,7 +18,7 @@ class AuthorsController < ApplicationController
   end
 
   def update
-    @author = Author.update_attributes(author_params)
+    @author = Author.assign_attributes(author_params)
     if @author.valid?
       @author.save
       redirect_to author_path(@author)
